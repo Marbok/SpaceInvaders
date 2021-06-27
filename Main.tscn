@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://asteroid/Asteroid.tscn" type="PackedScene" id=2]
 [ext_resource path="res://blast/Blast.tscn" type="PackedScene" id=3]
 [ext_resource path="res://spaceship/SpaceShip.tscn" type="PackedScene" id=4]
-[ext_resource path="res://walls/Walls.tscn" type="PackedScene" id=5]
-[ext_resource path="res://hud/HUD.tscn" type="PackedScene" id=6]
+[ext_resource path="res://hud/HUD.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -28,9 +27,7 @@ curve = SubResource( 1 )
 
 [node name="AsteroidSpawnLocation" type="PathFollow2D" parent="AsteroidPath"]
 
-[node name="Walls" parent="." instance=ExtResource( 5 )]
-
-[node name="HUD" parent="." instance=ExtResource( 6 )]
+[node name="HUD" parent="." instance=ExtResource( 5 )]
 
 [node name="StartPosition" type="Position2D" parent="."]
 position = Vector2( 510, 300 )
