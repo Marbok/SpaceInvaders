@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://asteroid/Asteroid.tscn" type="PackedScene" id=2]
+[ext_resource path="res://blast/Blast.tscn" type="PackedScene" id=3]
+[ext_resource path="res://spaceship/SpaceShip.tscn" type="PackedScene" id=4]
+[ext_resource path="res://walls/Walls.tscn" type="PackedScene" id=5]
+[ext_resource path="res://hud/HUD.tscn" type="PackedScene" id=6]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1020, 0, 0, 0, 0, 0, 1020, 600, 0, 0, 0, 0, 0, 600, 0, 0, 0, 0, 0, 0 )
+}
+
+[node name="Main" type="Node"]
+script = ExtResource( 1 )
+Asteroid = ExtResource( 2 )
+Blast = ExtResource( 3 )
+
+[node name="SpaceShip" parent="." instance=ExtResource( 4 )]
+
+[node name="AsteroidTimer" type="Timer" parent="."]
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="AsteroidPath" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="AsteroidSpawnLocation" type="PathFollow2D" parent="AsteroidPath"]
+
+[node name="Walls" parent="." instance=ExtResource( 5 )]
+
+[node name="HUD" parent="." instance=ExtResource( 6 )]
+
+[node name="StartPosition" type="Position2D" parent="."]
+position = Vector2( 510, 300 )
+
+[connection signal="fire" from="SpaceShip" to="." method="_on_SpaceShip_fire"]
+[connection signal="hit" from="SpaceShip" to="." method="_on_SpaceShip_hit"]
+[connection signal="timeout" from="AsteroidTimer" to="." method="_on_AsteroidTimer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
+[connection signal="start_game" from="HUD" to="." method="new_game"]
