@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spaceship.svg-2ce12e0c1be0e511e29576369bb86319.stex"
+path="res://.import/spaceship2.svg-30aa45213bcc3cb5a37fa66cbf9db831.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/spaceship.svg"
-dest_files=[ "res://.import/spaceship.svg-2ce12e0c1be0e511e29576369bb86319.stex" ]
+source_file="res://assets/spaceship2.svg"
+dest_files=[ "res://.import/spaceship2.svg-30aa45213bcc3cb5a37fa66cbf9db831.stex" ]
 
 [params]
 
