@@ -16,9 +16,15 @@ script = ExtResource( 1 )
 Asteroid = ExtResource( 2 )
 Blast = ExtResource( 3 )
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1020.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 1 )
+
 [node name="SpaceShip" parent="." instance=ExtResource( 4 )]
 
 [node name="AsteroidTimer" type="Timer" parent="."]
+wait_time = 2.0
 
 [node name="ScoreTimer" type="Timer" parent="."]
 
